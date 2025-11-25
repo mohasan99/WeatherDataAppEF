@@ -16,6 +16,15 @@ EFWeatherDataApp is a C# console application that imports weather data from a CS
   - Warmest → coldest indoor days
   - Driest → most humid indoor days
   - Indoor mold risk ranking
+ 
+## Mold Risk Index
+- We created a simple mold risk index based on average humidity and temperature:
+- Days with humidity < 75% or temperature < 0°C are treated as zero risk
+  - For all other days, risk is calculated as:
+(avgHumidity - 70) * (avgTemperature / 10)
+
+
+This means higher humidity and higher temperature both increase mold growth potential.
     
 ## Data Handling
 - Imports data from TempFuktData.csv
