@@ -1,0 +1,68 @@
+Date: 2025-11-21
+## What I accomplished today
+- Set up the project structure according to the assignment requirements:
+  Created a solution with three separate projects: Core, DataAccess, and UI.
+  Added proper project references between the layers.
+
+- Implemented the core architecture:
+  Created the WeatherEntry model with fields for place, date, temperature, and humidity.
+  Added the WeatherCalculator service structure in the Core project.
+
+- Installed and configured Entity Framework Core in the DataAccess project, including SQLite.
+
+- Implemented WeatherContext (DbContext) connected to a SQLite database.
+
+- Added CsvImporter and started parsing CSV data.
+
+## What I learned
+- How to set up a layered C# solution with clean separation of concerns.
+- How EF Core handles database creation and model mapping.
+- Importance of understanding CSV column order before parsing.
+- How Visual Studio project types affect execution (Class Library vs Console App).
+
+## Next steps
+- Finalize CSV import with correct date & number formats.
+- Implement calculations (hottest day, coldest day, averages, humidity metrics).
+- Build UI menu to let the user select different weather statistics.
+- Start working on VG-level requirements once base functionality is stable.
+
+Date: 2025-11-23
+## What I accomplished today
+- Implemented average outdoor temperature calculation for any chosen date.
+- Added user input and validation in Program.cs to test the feature.
+- Created DailyAverageTemp model for storing daily results.
+- Implemented sorting of outdoor days from warmest to coldest using average temperature.
+- Displayed the sorted list correctly in the console.
+
+## What I learned
+- How to use LINQ for filtering, grouping, averaging, and sorting.
+- How to design small helper models to structure results cleanly.
+- How to separate calculation logic (Core) from UI code (UI project).
+- How to reuse loaded data efficiently instead of querying the DB multiple times.
+
+## Next steps
+- Implement driest → most humid outdoor days using average humidity.
+- Implement mold risk sorting.
+- Calculate meteorological Autumn/Winter.
+- Build a simple menu system to navigate different statistics.
+
+Date: 2025-11-24
+## What I accomplished today
+- Completed all outdoor features:
+  - Average outdoor temp for selected date
+  - Warmest → coldest days (avg temp)
+  - Driest → most humid days (avg humidity)
+  - Mold-risk sorting
+  - Meteorological autumn + winter calculations
+
+- Completed all indoor features:
+  - Average indoor temp for selected date
+  - Warmest → coldest indoor days
+  - Driest → most humid indoor days
+  - Indoor mold-risk sorting
+
+- Improved console output with clean tables for all statistics.
+
+## What I learned
+- How to reuse LINQ patterns for filtering, grouping, averaging, and sorting.
+- How to apply domain logic (autumn/winter rules, mold index) in code.
